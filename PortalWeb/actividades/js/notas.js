@@ -69,7 +69,8 @@ alumnos.forEach((alumnos) => {
     const celdaNotas = document.createElement("td");
     const notas = alumnos.notas[`trimestre${i}`];
     const promedio =
-      notas.reduce((acc, nota) => acc + nota) / notas.length; //Método que utiliza dos parámetros
+      notas.reduce((acc, nota) => acc + nota) / notas.length; 
+      //REDUCE -> Método que utiliza dos parámetros de callback, acumulado 
     celdaNotas.textContent = promedio.toFixed(2);
     row.appendChild(celdaNotas);
   }
