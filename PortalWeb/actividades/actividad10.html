@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 10</title>
+</head>
+<body>
+    <h1>Expande la clase Array con un método que me retorne el array ordenado (incluído números).</h1>
+
+    <script>
+        const miArray = ["hola", "adios", "hacker", "array"];
+        const miArrayNum = [3, 49, 12, 54, 190, 222, 7801, 34, 1];
+
+        Array.prototype.ordenarNum = function(){
+            return this.sort((a, b) => a - b) //a-b desc y b-a asc
+        }
+
+        console.log(miArrayNum.ordenarNum());
+    </script>
+</body>
+</html>

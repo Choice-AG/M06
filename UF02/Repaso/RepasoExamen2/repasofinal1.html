@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Div</div>
+    <div class="rojo">Div Rojo</div>
+    <div class="verde">Div Verde</div>
+    <p class="verde">H2 Verde</p>
+    <div id="identificador">Div Identificador</div>
+    <script>
+        // -------------------------VARIABLES-------------------------
+        // VAR: Se puede re-definir
+        var nombre = "Haku"; 
+        var nombre = "Cambio";
+        // LET: No se puede re-definir
+        let nombre2 = "Haku";
+        // CONST: Es una constante
+        const total = 23;
+        console.log(nombre)
+        console.log(nombre2)
+        console.log(total)
+        // -------------------------OPERADORES-------------------------
+        // Asignacion, comparación, aritméticos, lógicos, ternarios
+        // =, ==, ===, !=, <, >, >=, <=, *, +, -, /, %, ++, --, +=, &&(and), ||(or)...
+        let edad = 17;
+        let mensaje = edad >= 18 ? !"Eres mayor de edad" : "Eres menor de edad";
+        console.log(mensaje)
+        // -------------------------TIPOS DE DATOS-------------------------
+        // Number, string, boolean, array, object, null, undefined
+        var myNull = null;
+        var undefined;
+        // -------------------------ESTRUCTURAS DE CONTROL-------------------------
+        // While(condición)
+        var i = 8;
+        while (i <= 10) {
+            console.log(i);
+            i++
+        }
+        // Do while
+        var k = 1
+        do {
+            console.log(k)
+            k++;
+        } while(k < 4)
+        // For in
+        let alumnos = {nombre:"Haku", edad:5, email:"haku@gmail.com"};
+        for(alumno in alumnos) {
+            console.log(alumnos[alumno]);
+        }
+        // For of
+        let colores = new Array("rojo", "verde", "azul"); // let colores = ["rojo", "verde", "azul"];
+        for (color of colores) {
+            console.log(color);
+        }
+        // For
+        for (let h = 0; h < colores.length ; h++) {
+            console.log(colores[h]);
+        }
+        // -------------------------FUNCIONES-------------------------
+        //Anónima (sin nombre)
+        // Normal
+        function fnombre(edad) {
+            console.log("Hola que tal, tengo " + edad);
+            console.log(`<h1>${edad}</h1>`)
+        }
+        fnombre(22);
+        // Flecha
+        ()=>[console.log("Soy una funcion flecha")]
+        // -------------------------DOM-------------------------
+        //DOM: Modelo de Objeto del Documento
+        let h1 = document.getElementById("identificador");
+        let rojo = document.getElementsByClassName("rojo");
+        let verde = document.getElementsByClassName("verde");
+        let identificador = document.querySelector("#identificador"); // version nueva
+        let verde2 = document.querySelectorAll(".verde"); // version nueva
+
+        for (let i = 0; i < verde.length ; i++) {
+            console.log(verde[i])
+        }
+        for (let i = 0; i < verde2.length ; i++) {
+            console.log(verde2[i])
+        }
+        // -------------------------OBJETOS NATIVOS-------------------------
+        // Array
+        let arrayNum = ["1", "2", "3", "4"];
+        let arrayNum1 = new Array("1", "2", "3", "4");
+        // String
+        let string = "Hola esto es un string";
+        let string1 = new String("Hola esto es un string"); //objeto
+
+        if (string == string1) {
+            console.log("el contenido de los 2 string es igual");
+        } else {
+            console.log("no son iguales");
+        }
+
+        if (string === string1) {
+            console.log("son iguales");
+        } else {
+            console.log("no son iguales de tipo");
+        }
+        // Date, math, json, object, expresiones regulares
+        // Temporizadores: setTimeOut("nombreFuncion", 5000(segundos)) <- 1 sola vez a los x segundos, setInterval(Intervalos regulares), clearInterval
+    </script>
+</body>
+</html>

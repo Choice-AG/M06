@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activdad 9</title>
+</head>
+<body>
+    <h1>Crea una clase aleatoria: con las propiedades valor mínimo, máximo y un método que me lo retorne (es decir un
+        número entero aleatorio entre los márgenes introducidos).</h1>
+
+    <script>
+        class Aleatorio {
+            constructor(min, max) {
+                this.min = min;
+                this.max = max;
+            }
+
+            //añadir método
+            getAleatorio() {
+                const numAleat = Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+                return numAleat;
+            }º
+        }
+        const numAleat = new Aleatorio(10, 20);
+        console.log(numAleat.getAleatorio());
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="mostrar"></div>
+    <script>
+        const alumnoslistado = '{"alumnos":[{"nombre":"Juan","apellido":"Pérez","edad":25,"email":"juan.perez@email.com"},{"nombre":"María","apellido":"Gómez","edad":22,"email":"maria.gomez@email.com"},{"nombre":"Pedro","apellido":"Martínez","edad":30,"email":"pedro.martinez@email.com"},{"nombre":"Sofía","apellido":"Rodríguez","edad":28,"email":"sofia.rodriguez@email.com"},{"nombre":"Lucas","apellido":"Sánchez","edad":26,"email":"lucas.sanchez@email.com"}]}';
+        const alumnosparseados = JSON.parse(alumnoslistado);  //Para pasar de JSON a string sería con stringfy
+        console.log(typeof alumnosparseados);
+        let mostrar = document.querySelector(".mostrar");
+        //Mostrar toda la indormacion en una tabla
+        let codigo = "<table border='1'><tr><th>NOMBRE</th><th>APELLIDO</th><th>EDAD</th><th>EMAIL</th></tr>";
+        for (const i = 0 ; i < alumnosparseados.alumnos.length ; i++) {
+            codigo += `<tr><td>${alumnosparseados.alumnos[i].nombre}</td><td>${alumnosparseados.alumnos[i].apellido}</td><td>${alumnosparseados.alumnos[i].edad}</td><td>${alumnosparseados.alumnos[i].email}</td></tr>`;
+        }
+        codigo += "</table>"
+        mostrar.innerHTML = codigo;
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class User{
+            constructor(username, password, nif){
+                this.username = username;
+                this.password = password;
+                this.nif = nif;
+            }
+            
+            comprobarNif() {
+                var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+                const nifUser = this.nif.slice(0, -1)
+                const letraNifUser = this.nif.slice(-1);
+                const letra = letras[nifUser % 23];
+                if(letra == letraNifUser){
+                    return letraNifUser;
+                } else {
+                    return "Letra incorrecta";
+                }
+            }
+
+            mostrarInfo(){ //método
+                console.log(`Usuario: ${this.username}. Password: ${this.password}. NIF: ${this.nif.substring(1, 8)}-${this.comprobarNif()}`);
+            }
+        }
+
+        let haku = new User('hakuWoW', 'Contraseña098', '12345678Z')
+        haku.mostrarInfo();
+    </script>
+</body>
+</html>

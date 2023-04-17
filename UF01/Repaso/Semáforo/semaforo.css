@@ -1,0 +1,45 @@
+#apDiv1 {
+    position: absolute;
+    width: 200px;
+    height: 115px;
+    z-index: 5;
+}
+#rojo {
+    position: absolute;
+    left: 96px;
+    top: 57px;
+    width: 90px;
+    height: 82px;
+
+    background-color:#F00;
+    visibility:hidden;
+}
+#ambar {
+    position: absolute;
+    left: 94px;
+    top: 143px;
+    width: 90px;
+    height: 82px;
+
+    background-color: #FF6;
+    visibility:hidden;
+}
+#verde {
+    position: absolute;
+    left: 91px;
+    top: 228px;
+    width: 90px;
+    height: 82px;
+    background-color: #0F0;
+    visibility:hidden;
+}
+#gris {
+    position: absolute;
+    left: 91px;
+    top: 53px;
+    width: 90px;
+    height: 257px;
+    
+    background-color: #CCC;
+    visibility:visible;
+}

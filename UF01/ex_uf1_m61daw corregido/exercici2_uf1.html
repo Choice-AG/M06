@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici 2</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="mostrar"></div>
+
+
+    <script>
+        let mostrar = document.getElementById("mostrar");
+        let fecha = new Date();
+        const diasSemana = ["domingo","lunes", "martes", "miércoles", "jueves","viernes", "sábado"];
+        console.log(fecha.getDay());
+        console.log(`Hoy es ${diasSemana[fecha.getDay()]}`);
+
+        switch(fecha.getDay()){
+            case 0: mostrar.innerHTML = `<p>Hoy es ${diasSemana[fecha.getDay()]}</p>`
+            break;
+            case 1: mostrar.innerHTML = `<p>Hoy es ${diasSemana[fecha.getDay()]}</p>`
+            break;
+            case 2: mostrar.innerHTML = `<p>Hoy es ${diasSemana[fecha.getDay()]}</p>`
+            break;
+            case 3: mostrar.innerHTML = `<p>Hoy es ${diasSemana[fecha.getDay()]}</p>`
+            break;
+            case 4: mostrar.innerHTML = `<p>Hoy es ${diasSemana[fecha.getDay()]}</p>`
+            break;
+            case 5: mostrar.innerHTML = `<p>Hoy es ${diasSemana[fecha.getDay()]}</p>`
+            break;
+            case 6: mostrar.innerHTML = `<p>Hoy es ${diasSemana[fecha.getDay()]}</p>`
+            break;
+        }
+        //el teu codi 0->diumenge, 1->dilluns. 2->dimarts...
+
+    </script>
+</body>
+</html>

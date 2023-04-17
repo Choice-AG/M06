@@ -1,0 +1,68 @@
+{
+  "comunidades": {
+    "comunidad": [
+      {
+        "provincia": [
+          "Barcelona",
+          "Tarragona",
+          "LLeida",
+          "Girona"
+        ]
+      },
+      {
+        "provincia": [
+          "Jaen",
+          "Cordoba",
+          "Sevilla",
+          "Huelva",
+          "Cadiz",
+          "Malaga",
+          "Granada",
+          "Almeria"
+        ]
+      },
+      {
+        "provincia": [
+          "La Corunya",
+          "Lugo",
+          "Orense",
+          "Pontevedra"
+        ]
+      },
+      {
+        "provincia": [
+          "Caceres",
+          "Badajoz"
+        ]
+      },
+      {
+        "provincia": [
+          "Zaragoza",
+          "Huesca",
+          "Teruel"
+        ]
+      },
+      {
+        "provincia": [
+          "Guadalajara",
+          "Toledo",
+          "Ciudad Real",
+          "Albacete",
+          "Cuenca"
+        ]
+      },
+      {
+        "provincia": [
+          "Leon",
+          "Burgos",
+          "Zamora",
+          "Valladolid",
+          "Salamanca",
+          "Avila",
+          "Segovia",
+          "Soria"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Class persona: Nombre, email, fechaNac y métodos calcularEdad (años), mostrarInfo</h2>
+
+    <script>
+        class Persona{
+            constructor(nombre, email, fechaNac, dni){
+                this.nombre = nombre;
+                this.email = email;
+                this.fechaNac = fechaNac;
+                this.dni = dni;
+            }
+
+            calcularEdad(){ //método
+                const hoy = new Date();
+                const edad = hoy.getFullYear() - this.fechaNac.getFullYear();
+                return edad;
+            }
+
+            mostrarInfo(){ //método
+                console.log(`Mi nombre es ${this.nombre}, con mail ${this.email} y tengo ${haku.calcularEdad()} años. DNI ${this.dni}-${this.calcularLetra()}`);
+            }
+            calcularLetra(){
+                var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+                const letra = letras[this.dni % 23]
+                return letra;
+            }
+        }
+        
+        let haku = new Persona('Haku', 'haku@gmail.com', new Date(2017,9,29), '74893467')
+        haku.mostrarInfo();
+        let goizane = new Persona('Goizane', 'goizaneolaneta@gmail.com', new Date(2022,6,2));
+        goizane.mostrarInfo();
+
+        
+    </script>
+</body>
+</html>

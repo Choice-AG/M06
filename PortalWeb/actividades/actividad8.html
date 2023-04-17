@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 8</title>
+</head>
+<body>
+    <h1>Crea una clase que te permita obtener el dia de la semana (lunes,...), el més (enero...) y el año. Establece como propiedades: dia, mes, hora y minutos.</h1>
+
+    <script>
+        //Hacerlo con class
+        class miFecha extends Date{
+            constructor(year, month, day, hours = 0, minutes = 0, seconds = 0, milliseconds = 0){
+                super(year, month - 1, day, hours, minutes, seconds, milliseconds); //Llama a la clase padre
+                
+                this.year = year;
+                this.month = month;
+                this.day = day;
+                this.hours = hours;
+                this.minutes = minutes;
+                this.seconds = seconds;
+                this.milliseconds = milliseconds;
+            }
+
+            //MÉTODOS
+            getDayName(){
+                    const dias = ["Domingo", "Lúnes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+                    return dias[this.getDay()];
+            }
+            getMonthName(){
+                    const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+                    return meses[this.getMonth()];
+            }
+            getInfo(){
+                    return (`Hoy es ${this.getDayName()} día ${this.getDate()} de ${this.getMonthName()}`)
+            }
+        }
+        //Crea la clase
+        const hoy = new miFecha(2023, 3, 14, 19, 25);
+        console.log(hoy.getDayName());
+        console.log(hoy.getMonthName());
+        console.log(hoy.getInfo());
+    </script>
+</body>
+</html>

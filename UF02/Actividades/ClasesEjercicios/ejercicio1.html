@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        function Rectangulo(anchura,altura){
+            this.anchura=anchura;
+            this.altura=altura;
+            this.calcularPerimetro=function(){
+                let perimetro=anchura*2+altura*2;
+                return perimetro;
+            }
+            this.calcularSuperficie=function(){
+                return anchura*altura;
+            }
+            this.mostrarinfo=function(){
+                let info= `El rectangula tiene una anchura de ${this.anchura} px y una altura de ${this.altura} px su superficie es de ${this.calcularPerimetro()} y el perimetro es de ${this.calcularSuperficie()}`;
+                return info;
+            }
+        }
+        //Instancia
+        let rec=new Rectangulo(100,200);
+        console.log(rec.mostrarinfo());
+    </script>
+</body>
+</html>

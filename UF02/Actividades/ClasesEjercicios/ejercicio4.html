@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function Alumno(nombre,email,dni){
+            this.nombre=nombre;
+            this.email=email;
+            this.dni=dni;
+            this.calcularNif=function(){
+                let LetrasNIF = Array('T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E');
+                let resto=this.dni % 23;
+                return LetrasNIF[resto];
+            }
+            this.mostrarInfo=function(){
+                return `Hola me llamo ${this.nombre} mi dni es ${this.dni}-${this.calcularNif()}`;
+            }
+        }
+        let alumnos =new Alumno('Paco','paco@gmail.com',12345678);
+        console.log(alumnos.mostrarInfo());
+    </script>
+</body>
+</html>

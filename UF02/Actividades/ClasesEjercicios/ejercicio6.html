@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function Salud(peso,sexo,edad,altura,sexo){
+            this.peso=peso;
+            this.sexo=sexo;
+            this.edad=edad;
+            this.altura=altura;
+            this.sexo=sexo;
+            this.calcularImc=function(){
+                let imc=this.peso/(Math.pow(this.altura/100, 2))
+                //Math.pow(this.altura, 2) Pone el valor de altura al cuadrado
+                if(imc<18.49){
+                    return "Peso bajo";
+                }else if(imc>18.50 && imc<24.9){
+                    return "Normal";
+                }else if(imc>25 && imc<29.9){
+                    return "Sobrepeso";
+                }else if(imc>30){
+                    return "Obesidad";
+                }
+                return imc;
+            }
+            this.calcularIMB=function(){
+                TMB;
+                if(this.sexo=="M"){
+                    TMB = (10*this.peso)+(6.25*this.altura)-(5*this.edad)+5;
+                }else if(this.sexo=="F"){
+                    TMB = (10*this.peso)+(6.25*this.altura)-(5*this.edad)-161;
+                }else{
+                    return "ALGO NO ES CORRECTO";
+                }
+            }
+        }
+        let perico=new Salud(80,"M",20,180,"M");
+        console.log(perico.calcularImc());
+    </script>
+</body>
+</html>

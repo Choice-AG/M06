@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici 3</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="mostrar"></div>
+
+
+    <script>
+        //el teu codi 
+        const provincies = new Array('Alava','Albacete','Alicante','Almería','Asturias','Avila','Badajoz','Barcelona','Burgos','Cáceres','Cádiz','Cantabria','Castellón','Ciudad Real','Córdoba','La Coruña','Cuenca','Gerona','Granada','Guadalajara','Guipúzcoa','Huelva','Huesca','Islas Baleares','Jaén','León','Lérida','Lugo','Madrid','Málaga','Murcia','Navarra','Orense','Palencia','Las Palmas','Pontevedra','La Rioja','Salamanca','Segovia','Sevilla','Soria','Tarragona','Santa Cruz de Tenerife','Teruel','Toledo','Valencia','Valladolid','Vizcaya','Zamora','Zaragoza');
+        let mostrar = document.getElementById("mostrar");
+        let codigo = "";
+
+        for (let i = 0 ; i < provincies.length ; i++) {
+            codigo += `${provincies[i]} `;
+        }
+
+        mostrar.innerHTML = codigo;
+    </script>
+</body>
+</html>

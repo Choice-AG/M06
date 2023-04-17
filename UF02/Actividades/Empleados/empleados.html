@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Empleados</title>
+	<style>
+		.show {
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			flex-direction: column;
+		}
+
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: 1px solid black;
+			margin: 10px 0px;
+			padding: 10px 10px 7px 10px;
+			border-radius: 10px;
+			background: linear-gradient(90deg, rgb(9, 121, 114) 0%, rgba(0, 255, 179, 0.715) 30%, rgba(255,255,255,1) 63%);
+		}
+
+		#datos {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			width: 200px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="show"></div>
+	<script>
+		const empleados = `
+        {"empleados": {
+		        "empleado": [
+			    {
+				    "id": "1",
+				    "nombre": "Tom",
+				    "apellido": "Cruise",
+				    "foto": "https://pbs.twimg.com/profile_images/735509975649378305/B81JwLT7.jpg"
+			    },
+			    {
+				    "id": "2",
+				    "nombre": "Maria",
+				    "apellido": "Sharapova",
+				    "foto": "https://pbs.twimg.com/profile_images/3424509849/bfa1b9121afc39d1dcdb53cfc423bf12.jpeg"
+			    },
+			    {
+				    "id": "3",
+				    "nombre": "Leo",
+				    "apellido": "Messi",
+				    "foto": "http://as00.epimg.net/img/comunes/fotos/fichas/deportistas/m/mes/large/15167.png"
+			    },
+			    {
+				    "id": "4",
+				    "nombre": "Jose Luis",
+				    "apellido": "Torrente",
+				    "foto": "https://pbs.twimg.com/profile_images/707489319632637952/12eAsq14.jpg"
+			    },
+			    {				    "id": "5",
+				    "nombre": "James",
+				    "apellido": "Bond",
+				    "foto": "https://pbs.twimg.com/profile_images/664886718559076352/M00cOLrh.jpg"
+			    }
+		    ]
+	    }}`;
+		let show = document.querySelector(".show");
+		let code = "";
+
+		const empleadosjson = JSON.parse(empleados);
+		for (let i = 0; i < empleadosjson.empleados.empleado.length; i++) {
+			code += `
+                <div class="container">
+				<div><img src="${empleadosjson.empleados.empleado[i].foto}" alt="imgEmpleado"></div>
+                <div id="datos"><p>ID empleado: <b>${empleadosjson.empleados.empleado[i].id}</b></p>
+                <p>Nombre: <b>${empleadosjson.empleados.empleado[i].nombre}</b></p>
+                <p>Apellido: <b>${empleadosjson.empleados.empleado[i].apellido}</b></p></div>
+                </div>`
+		}
+
+		show.innerHTML = code;
+	</script>
+</body>
+
+</html>

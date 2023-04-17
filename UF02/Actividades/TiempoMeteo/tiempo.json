@@ -1,0 +1,46 @@
+{
+    "coord": {
+        "lon": -2.5,
+        "lat": 43.1833
+    },
+    "weather": [
+        {
+            "id": 804,
+            "main": "Clouds",
+            "description": "overcast clouds",
+            "icon": "04n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 278.62,
+        "feels_like": 278.62,
+        "temp_min": 278.01,
+        "temp_max": 280.69,
+        "pressure": 1026,
+        "humidity": 99,
+        "sea_level": 1026,
+        "grnd_level": 1002
+    },
+    "visibility": 81,
+    "wind": {
+        "speed": 0.62,
+        "deg": 117,
+        "gust": 1.57
+    },
+    "clouds": {
+        "all": 100
+    },
+    "dt": 1675791876,
+    "sys": {
+        "type": 2,
+        "id": 2007106,
+        "country": "ES",
+        "sunrise": 1675754351,
+        "sunset": 1675790946
+    },
+    "timezone": 3600,
+    "id": 3123063,
+    "name": "Ermua",
+    "cod": 200
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8"/>
+  <title>Documento sin título</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+
+<body>
+  <div id="capa1">el precio de las zonas es variable</div>
+
+  <img src="img/santjordi.png" width="404" height="352" usemap="#imagenMap" id="imagen"/>
+  <map name="imagenMap" id="imagenMap">
+    <area shape="poly" coords="288,135,300,128,301,118,347,70,362,71,375,85,381,179,369,271,353,286,287,222" href="#"alt="zona3"/>
+    <area shape="poly" coords="90,132,171,122,277,137,277,213,170,234,90,220" href="#" alt="zona4"/>
+    <area shape="poly" coords="30,84,17,39,175,19,324,44,311,82,173,66" href="#" alt="zona2"/>
+    <area shape="poly" coords="32,270,176,293,309,274,322,305,161,338,21,309" href="#" alt="zona2"/>
+    <area shape="poly" coords="22,97,176,71,313,94,270,129,78,127,31,122" href="#" alt="zona1"/>
+    <area shape="poly" coords="79,228,170,241,271,226,313,260,173,285,26,258,30,230" href="#" alt="zona1"/>
+  </map>
+  <hr>
+  <p>Compra de entradas:</p>
+  <label for="cajaEntradas">Numero de Entradas</label>
+  <input type="number" id="cajaEntradas" min="0" max="5" step="1" value="1"><br>
+
+  <label for="cajaZona">Zona</label>
+  <input type="text" id="cajaZona"><br>
+
+  <label for="cajaPrecio">Precio entrada</label>
+  <input type="text" id="cajaPrecio" value="0" readonly><br>
+  <hr>
+  <label for="cajaPagar">TOTAL:</label>
+  <input type="text" id="cajaPagar" value="0" readonly>
+  <script src="js/palau.js"></script>
+</body>
+
+</html>
+
+<!-- Num entradas(max 5), ZONA, Precio, A pagar -->
+<!-- Zona 1 - 150€, 2 - 90€, 3 - 120€, 4 - 80€ -->

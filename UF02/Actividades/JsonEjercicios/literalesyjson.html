@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //El json es una cadena de texto que puede ser transmitida/almacenada
+        //Un literal es un objeto creado en js
+        const personajson = `{"nombre":"Elena","edad":25,"hobbies":["leer","viajar","jugar"]}`;
+        console.log(typeof personajson);
+        const personajsonbis = JSON.parse(personajson);
+        console.log(typeof personajsonbis);
+        console.log(personajsonbis.hobbies);
+    </script>
+</body>
+</html>

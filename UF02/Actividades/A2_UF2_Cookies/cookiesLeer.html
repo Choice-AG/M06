@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leer cookies</title>
+</head>
+<body>
+    <h2>Leer las cookies almacenadas</h2>
+    <div id="info">
+
+    </div>
+    <script>
+        let info = document.querySelector("#info");
+        let galletas = document.cookie;
+        let arrayGalletas = galletas.split(";");
+
+        /*
+        info.innerHTML = document.cookie;
+        console.log(document.cookie);
+        console.log(typeof galletas);
+        console.log(arrayGalletas[0].split("=")[0]);
+        */
+
+        console.log()
+        let arrayNombre = [];
+        let arrayValor = [];
+        for(let i = 0; i < arrayGalletas.length ; i++){
+            arrayNombre = arrayGalletas[i].split("=")[0];
+            arrayValor = arrayGalletas[i].split("=")[1];
+            console.log(`Nombre:${arrayNombre}`);
+            console.log(`Valor: ${arrayValor}`);
+            console.log("-----------------");
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //La forma inicial de crear clases es con function
+        function Persona(nombre,apellido,fecha_nac,dni){
+            this.nombre=nombre;
+            this.apellido=apellido;
+            this.fecha_nac=fecha_nac;
+            this.dni=dni;
+            this.mostrarInfo=function(){
+                console.log(`Me llamo ${this.nombre} nací en ${this.fecha_nac} y mi dni es ${this.dni}`);
+            }
+            this.calcularNif=calcularNif();
+        }
+        function calcularNif(){
+            let LetrasNIF = Array('T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E');
+            let resto=this.dni % 23;
+            return LetrasNIF[resto];
+        }
+        //-----------------------------------------------------
+        let alumnodaw = new Persona("Elena","Nillo","01/01/2000",45678901)
+        alumnodaw.mostrarInfo();
+    </script>
+</body>
+</html>

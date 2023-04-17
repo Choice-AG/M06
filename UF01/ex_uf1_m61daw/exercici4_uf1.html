@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici 4</title>
+    <style>
+        #mostrar{
+            width: 400px; 
+            height: 400px; 
+            background-color: beige;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="mostrar"></div>
+
+
+    <script>
+        //el teu codi 
+        const colors=["red","blue","green","yellow"];
+        let mostrar = document.getElementById("mostrar");
+
+        function cambioRojo() {
+            mostrar.style.backgroundColor = `${colors[0]}`;
+            setTimeout(cambioAzul, 1000);
+        }
+
+        function cambioAzul() {
+            mostrar.style.backgroundColor = `${colors[1]}`;
+            setTimeout(cambioVerde, 2000);
+        }
+
+        function cambioVerde() {
+            mostrar.style.backgroundColor = `${colors[2]}`;
+            setTimeout(cambioAmarillo, 3000);
+        }
+
+        function cambioAmarillo() {
+            mostrar.style.backgroundColor = `${colors[3]}`;
+            setTimeout(cambioRojo, 4000);
+        }
+
+        cambioRojo();
+
+    </script>
+</body>
+</html>

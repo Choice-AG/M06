@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici 5</title>
+    <style>
+        img{border: 2px solid black; border-radius: 30%;}
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <button id="bt1">https://picsum.photos/300/300?random=1</button>
+        <button id="bt2">https://picsum.photos/300/300?random=2</button>
+        <button id="bt3">https://picsum.photos/300/300?random=3</button>
+        <button id="bt4">https://picsum.photos/300/300?random=4</button>
+        <button id="bt5">https://picsum.photos/300/300?random=5</button>
+        <button id="bt6">https://picsum.photos/300/300?random=6</button>
+        <button id="bt7">https://picsum.photos/300/300?random=7</button>
+        <button id="bt8">https://picsum.photos/300/300?random=8</button>
+        <button id="bt9">https://picsum.photos/300/300?random=9</button>
+        <button id="bt10">https://picsum.photos/300/300?random=10</button>
+    </div>
+    <hr>
+    <p>Mostra la imatge a sota, a l'element img</p>
+    <hr>
+    <img src="" alt="imatge" id="miimagen">
+    <script>
+        //el teu codi 
+
+        let contenedor = document.getElementById("contenedor");
+        let imagen = document.getElementById("miimagen");
+        let source;
+
+        contenedor.addEventListener("click", function(e) {
+            console.log(e.target.innerText);
+            console.log(e.target.id);
+
+            source = e.target.innerText;
+            imagen.src = source;
+        })
+
+    </script>
+</body>
+</html>

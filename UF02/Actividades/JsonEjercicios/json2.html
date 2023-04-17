@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="mostrar"></div>
+    <script>
+        const listaColores = {
+            "arrayColores": [{
+                "nombreColor": "rojo",
+                "valorHexadec": "#f00"
+            },
+            {
+                "nombreColor": "verde",
+                "valorHexadec": "#0f0"
+            },
+            {
+                "nombreColor": "azul",
+                "valorHexadec": "#00f"
+            },
+            {
+                "nombreColor": "cyan",
+                "valorHexadec": "#0ff"
+            },
+            {
+                "nombreColor": "magenta",
+                "valorHexadec": "#f0f"
+            },
+            {
+                "nombreColor": "amarillo",
+                "valorHexadec": "#ff0"
+            },
+            {
+                "nombreColor": "negro",
+                "valorHexadec": "#000"
+            }
+            ]
+        }
+
+        let mostrar = document.querySelector(".mostrar");
+        let codigo = "";
+        console.log(typeof listaColores)
+        //---------------------MÉTODO 1 -> FOR---------------------
+        /* for (let i = 0; i < listaColores.arrayColores.length; i++) {
+            codigo += `<p>${listaColores.arrayColores[i].nombreColor} ${listaColores.arrayColores[i].valorHexadec}</p>`
+        } */
+        //---------------------MÉTODO 2 -> FOR IN---------------------
+        for (color in listaColores.arrayColores) {
+            codigo += `<p>${listaColores.arrayColores[color].nombreColor} ${listaColores.arrayColores[color].valorHexadec}</p>`
+        }
+        mostrar.innerHTML = codigo; 
+    </script>
+</body>
+
+</html>

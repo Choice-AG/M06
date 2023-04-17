@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 7 - Palindromo</title>
+</head>
+<body>
+    <h1>Amplia la clase String con un método que compruebe si el string es un palíndromo o no</h1>
+
+    <script>
+        let mifrase = "hola que tal";
+
+        String.prototype.esPalinromo = function(){
+            //console.log(mifrase)
+            mifrase = mifrase.toLocaleLowerCase();
+            mifrase = mifrase.replace(" ", "");
+            const invertida = mifrase.split('').reverse();
+            mifrase = mifrase.split('');
+            console.log(mifrase);
+            console.log(invertida);
+            for (let i = 0; o < mifrase.length ; i++){
+                if (mifrase[i] == invertida[i]){
+                    return "Tu frase es palíndroma."
+                } else {
+                    return "Tu frase NO es palíndroma."
+                }
+            }
+            console.log(mifrase);
+            console.log(invertida);
+        };
+    </script>
+</body>
+</html>

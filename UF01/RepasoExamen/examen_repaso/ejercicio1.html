@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        input {
+            font-size: 18px;
+            font-weight: bold;
+            color: #F00;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Códigos postales</h1>
+    <h3>Barcelona seria 08XXX, Madrid seria 28XXX</h3>
+    <label for="cajacp">codigo postal:</label>
+    <input type="text" id="cajacp" size="5ch" maxlength="5" autofocus /><br />
+    <label for="cajaprov">provincia:</label>
+    <input type="text" id="cajaprov" disabled="true" /><br />
+    <button id="boton">Buscar</button>
+    <script>
+        //01-->es Alava, 02-->es Albacete...
+        const nprovincias = new Array("Álava", "Albacete", "Alicante", "Almería", "Ávila", "Badajoz",
+            "Baleares", "Barcelona", "Burgos", "Cáceres", "Cádiz", "Castellón", "Ciudad Real", "Córdoba",
+            "Coruña", "Cuenca", "Girona", "Granada", "Guadalajara", "Guipuzcoa", "Huelva", "Huesca", "Jaén",
+            "León", "Lleida", "Rioja", "Lugo", "Madrid", "Málaga", "Murcia", "Navarra", "Orense", "Asturias",
+            "Palencia", "Las Palmas", "Pontevedra", "Salamanca", "Tenerife", "Cantabria", "Segovia", "Sevilla",
+            "Soria", "Tarragona", "Teruel", "Toledo", "Valencia", "Valladolid", "Vizcaya", "Zamora", "Zaragoza",
+            "Ceuta", "Melilla");
+
+        let cajacp = document.getElementById("cajacp");
+        let cajaprov = document.getElementById("cajaprov");
+        let boton = document.getElementById("boton");
+
+        boton.addEventListener("click", function () {
+            let codigo = cajacp.value;
+            let provincia = codigo.slice(0, 2);
+            cajaprov.value = nprovincias[provincia - 1];
+        })
+    </script>
+</body>
+
+</html>

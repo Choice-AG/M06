@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici 4</title>
+    <style>
+#mostrar{width: 400px; height: 400px; background-color: beige;
+    border: 1px solid black;
+}
+    </style>
+</head>
+<body>
+    <div id="mostrar"></div>
+
+
+    <script>
+        //el teu codi 
+        let mostrar = document.getElementById("mostrar");
+        const colors=["red","blue","green","yellow"];
+       
+        function Rojo(){
+            mostrar.style.backgroundColor = colors[0];
+            setTimeout(Azul, 1000);
+        }
+        function Azul(){
+            mostrar.style.backgroundColor = colors[1];
+            setTimeout(Verde, 2000);
+        }
+        function Verde(){
+            mostrar.style.backgroundColor = colors[2];
+            setTimeout(Amarillo, 3000);
+        }
+        function Amarillo(){
+            mostrar.style.backgroundColor = colors[3];
+            setTimeout(Rojo, 4000);
+        }
+        setTimeout(Rojo, 0);
+       
+        
+
+    </script>
+</body>
+</html>

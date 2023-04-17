@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#pelota {
+    width: 100px;
+    height: 100px;
+    background-color: #c002b7;
+    border-radius: 50%;
+    position: relative;
+    left: 0px;
+}

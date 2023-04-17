@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <h3>Ampliar la clase String nativa con un método que cuente las vocales/consonante/o cualquier carácter</h3>
+
+    <script>
+        let mifrase = "Esta es una frase";
+        let nif = "12345678A";
+        //Extener una clase existente --> prototype
+        String.prototype.contarVocales = function(){
+            let vocales = this.match(/[aeiou]/gi); //g de general y la i de mayusculas y minusculas
+            return vocales.length;
+        }
+        console.log("Vocales: " + mifrase.contarVocales());
+
+        String.prototype.contarConsonantes = function(){
+            let consonantes = this.match(/[bcdefghjklmnñpqrstvwxyz]/gi); // ^aeiou Con ^ se hac que sea lo contrario a eso.
+            return consonantes.length;
+        }
+        console.log("Consonantes: " + mifrase.contarConsonantes());
+
+        String.prototype.comprobarNIF = function(){
+            let letras = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
+            let nifSinLetra = nif.substr(0, 8);
+            return nifSinLetra;
+
+            
+        }
+        console.log(nif.comprobarNIF());
+    </script>
+</body>
+</html>

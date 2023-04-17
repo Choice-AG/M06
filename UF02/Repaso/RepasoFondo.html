@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="cajaColor">
+
+    <script>
+        let color = document.querySelector("#cajaColor");
+
+        window.addEventListener("load", function(){
+            if (localStorage.getItem("colorStorage") != null) {
+                document.body.style.backgroundColor = localStorage.getItem("colorStorage");
+            } else {
+                fondoColorAtLoad();
+            }
+        })
+
+        function fondoColorAtLoad() {
+            localStorage.setItem("colorStorage", color.value);
+        }
+
+        color.addEventListener("focusout", function(){
+            localStorage.setItem("colorStorage", color.value);
+            document.body.style.backgroundColor = color.value;
+        })
+    </script>
+</body>
+</html> 

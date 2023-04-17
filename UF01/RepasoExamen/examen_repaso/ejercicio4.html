@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Nº caracteres, Nº vocales, Nº palabras -->
+
+    <script>
+        let frase = "Voy a suspender este examen";
+        let caracteres = frase.length;
+        console.log("Número de carácteres: " + caracteres)
+
+        let palabras = frase.split(" ");
+        console.log("Número de palabras: " + palabras.length)
+
+        let vocales = "aeiou";
+        let cont = 0;
+        for (i = 0 ; i < frase.length ; i++) {
+            if (vocales.includes(frase[i])) {
+                cont++;
+            }
+        }
+        console.log(cont)
+    </script>
+</body>
+</html>

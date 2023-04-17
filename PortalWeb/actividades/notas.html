@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  table{
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 5px;
+    text-align: left;
+    font-size: 1.2rem;
+    border: 1px solid black;
+  }
+  th {
+    background-color: greenyellow;
+    color: black;
+  }
+  tr:nth-child(even) {
+    background-color: #dadada;
+  }
+  tr:hover {
+    background-color: #ddd;
+  }
+</style>
+<body>
+  <h2>Listado de notas</h2>
+  <table>
+    <thead>
+      <th>NOMBRE</th>
+      <th>APELLIDO</th>
+      <th>TRIMESTRE 1</th>
+      <th>TRIMESTRE 2</th>
+      <th>TRIMESTRE 3</th>
+    </thead>
+    <tbody id="alumnosTabla"></tbody>
+  </table>
+  </div>
+  <script src="js/notas.js"></script>
+</body>
+</html>

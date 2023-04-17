@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 11</title>
+</head>
+<body>
+    <h1>Crea una clase smartphone que me permita guardar como propiedades: marca, modelo, color, imagen  y un método que me muestre toda la información.</h1>
+
+    <script>
+        class Smartphone {
+            constructor(marca, modelo, color){
+                this.marca = marca;
+                this.modelo = modelo;
+                this.color = color.toLowerCase();
+            }
+
+            getInfo(){
+                return(`Tengo un teléfono ${this.modelo} de marca ${this.marca} de color ${this.color}`);
+            }
+        }
+        const miSmartphone = new Smartphone("Xiaomi", "Poco x3 pro", "Negro");
+        console.log(miSmartphone.getInfo());
+    </script>
+</body>
+</html>

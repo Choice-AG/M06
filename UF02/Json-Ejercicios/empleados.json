@@ -1,0 +1,36 @@
+{
+	"empleados": {
+		"empleado": [
+			{
+				"id": "1",
+				"nombre": "Tom",
+				"apellido": "Cruise",
+				"foto": "https://pbs.twimg.com/profile_images/735509975649378305/B81JwLT7.jpg"
+			},
+			{
+				"id": "2",
+				"nombre": "Maria",
+				"apellido": "Sharapova",
+				"foto": "https://pbs.twimg.com/profile_images/3424509849/bfa1b9121afc39d1dcdb53cfc423bf12.jpeg"
+			},
+			{
+				"id": "3",
+				"nombre": "Leo",
+				"apellido": "Messi",
+				"foto": "http://as00.epimg.net/img/comunes/fotos/fichas/deportistas/m/mes/large/15167.png"
+			},
+			{
+				"id": "4",
+				"nombre": "Jose Luis",
+				"apellido": "Torrente",
+				"foto": "https://pbs.twimg.com/profile_images/707489319632637952/12eAsq14.jpg"
+			},
+			{
+				"id": "4",
+				"nombre": "James",
+				"apellido": "Bond",
+				"foto": "https://pbs.twimg.com/profile_images/664886718559076352/M00cOLrh.jpg"
+			}
+		]
+	}
+}
