@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Gráficos</title>
+  </head>
+  <body>
+    <h2>Representación gráfica</h2>
+    <div id="mostrar">
+      <img
+        id="img1"
+        src="img/grafico/pipxel.png"
+        width="0px"
+        height="50px"
+      /><br />
+      <img
+        id="img2"
+        src="img/grafico/pipxel.png"
+        width="0px"
+        height="50px"
+      /><br />
+      <img
+        id="img3"
+        src="img/grafico/pipxel.png"
+        width="0px"
+        height="50px"
+      /><br />
+      <hr />
+      <div id="cajaBotones">
+        <button id="btn1">VOTAR 1</button>
+        <button id="btn2">VOTAR 2</button>
+        <button id="btn3">VOTAR 3</button>
+        <button id="btnReset">RESET</button>
+      </div>
+    </div>
+
+    <script>
+      let img1 = document.querySelector("#img1");
+      let img2 = document.querySelector("#img2");
+      let img3 = document.querySelector("#img3");
+      let cajaVotos = document.querySelector("#cajaBotones");
+      let voto1 = document.querySelector("#btn1");
+      let voto2 = document.querySelector("#btn2");
+      let voto3 = document.querySelector("#btn3");
+      let reset = document.querySelector("#btnReset");
+
+      const grafico1 = [0, 0, 0];
+
+      cajaVotos.addEventListener("click", (e) => {
+        //console.log(e.target.id);
+        let btnId = e.target.id;
+        switch (btnId) {
+          case "btn1":
+            graficñño1[0]++;
+            console.log("Valor1: " + grafico1[0]);
+            break;
+          case "btn2":
+            grafico1[1]++;
+            console.log("Valor2: " + grafico1[1]);
+            break;
+          case "btn3":
+            grafico1[2]++;
+            console.log("Valor3: " + grafico1[2]);
+            break;
+          case "btnReset":
+            grafico1[0] = 0;
+            grafico1[1] = 0;
+            grafico1[2] = 0;
+            console.log("Reseteado");
+            break;
+        }
+
+        let total = grafico1[0] + grafico1[1] + grafico1[2];
+        let valor1 = (grafico1[0] * 100 * 4) / total;
+        let valor2 = (grafico1[1] * 100 * 4) / total;
+        let valor3 = (grafico1[2] * 100 * 4) / total;
+
+        img1.style.width = valor1 + "px";
+        img2.style.width = valor2 + "px";
+        img3.style.width = valor3 + "px";
+      });
+    </script>
+  </body>
+</html>
