@@ -17,19 +17,25 @@
         src="img/grafico/pipxel.png"
         width="0px"
         height="50px"
-      /><br />
+      />
+      <span id="span1"></span>
+      <br />
       <img
         id="img2"
         src="img/grafico/pipxel.png"
         width="0px"
         height="50px"
-      /><br />
+      />
+      <span id="span2"></span>
+      <br />
       <img
         id="img3"
         src="img/grafico/pipxel.png"
         width="0px"
         height="50px"
-      /><br />
+      />
+      <span id="span3"></span>
+      <br />
       <hr />
       <div id="cajaBotones">
         <button id="btn1">VOTAR 1</button>
@@ -43,7 +49,10 @@
       let img1 = document.querySelector("#img1");
       let img2 = document.querySelector("#img2");
       let img3 = document.querySelector("#img3");
-      
+      let span1 = document.querySelector("#span1");
+      let span2 = document.querySelector("#span2");
+      let span3 = document.querySelector("#span3");
+
       let cajaVotos = document.querySelector("#cajaBotones");
       let voto1 = document.querySelector("#btn1");
       let voto2 = document.querySelector("#btn2");
@@ -58,33 +67,46 @@
         switch (btnId) {
           case "btn1":
             grafico1[0]++;
-            console.log("Valor1: " + grafico1[0]);
+            printGraphic();
             break;
           case "btn2":
             grafico1[1]++;
-            console.log("Valor2: " + grafico1[1]);
+            printGraphic();
             break;
           case "btn3":
             grafico1[2]++;
-            console.log("Valor3: " + grafico1[2]);
+            printGraphic();
             break;
           case "btnReset":
-            grafico1[0] = 0;
-            grafico1[1] = 0;
-            grafico1[2] = 0;
-            console.log("Reseteado");
+            resetGraphic();
             break;
         }
+      });
 
+      function printGraphic() {
         let total = grafico1[0] + grafico1[1] + grafico1[2];
-        let valor1 = (grafico1[0] * 100 * 4) / total;
-        let valor2 = (grafico1[1] * 100 * 4) / total;
-        let valor3 = (grafico1[2] * 100 * 4) / total;
+        let valor1 = (grafico1[0] * 100) / (total / 15);
+        let valor2 = (grafico1[1] * 100) / (total / 15);
+        let valor3 = (grafico1[2] * 100) / (total / 15);
+
+        span1.innerHTML = (valor1 / 15).toFixed(1) + "%";
+        span2.innerHTML = (valor2 / 15).toFixed(1) + "%";
+        span3.innerHTML = (valor3 / 15).toFixed(1) + "%";
 
         img1.style.width = valor1 + "px";
         img2.style.width = valor2 + "px";
         img3.style.width = valor3 + "px";
-      });
+      }
+
+      function resetGraphic() {
+        img1.style.width = "0px";
+        img2.style.width = "0px";
+        img3.style.width = "0px";
+
+        span1.innerHTML = "0.0%";
+        span2.innerHTML = "0.0%";
+        span3.innerHTML = "0.0%";
+      }
     </script>
   </body>
 </html>
