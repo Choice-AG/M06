@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <button id="bt1" class="botoncito">BOTON1</button>
+    <button id="bt2" class="botoncito">BOTON2</button>
+
+    <script>
+        $(document).ready(function(){
+            /*$("#bt1").on("click",function(){
+                alert("Has pulsado el bt1");
+            })
+            $("#bt2").click(function(){
+                alert("Has pulsado el bt2");
+            })*/
+            $(".botoncito").click(function(){
+                alert("Has pulsado el boton "+$(this).attr("id"));
+                $(this).css("color","red");
+                $(this).animate({
+                    opacity:0.25,
+                    fontSize: "+=4em"
+                })                
+            })
+        })
+    </script>
+</body>
+</html>

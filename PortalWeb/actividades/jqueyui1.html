@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            width: 1408px;
+            height: 102px;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #c1{
+            background-image: url("img/chimpance_09.gif");
+        }
+        #c2{
+            background-image: url("img/chimpance_08.gif");
+        }
+        #c3{
+            background-image: url("img/chimpance_02.gif");
+        }
+        #c4{
+            background-image: url("img/chimpance_10.gif");
+        }
+        #c5{
+            background-image: url("img/chimpance_01.gif");
+        }
+        #c6{
+            background-image: url("img/chimpance_06.gif");
+        }
+        #c7{
+            background-image: url("img/chimpance_05.gif");
+        }
+        #c8{
+            background-image: url("img/chimpance_03.gif");
+        }
+        #c9{
+            background-image: url("img/chimpance_04.gif");
+        }
+        #c10{
+            background-image: url("img/chimpance_07.gif");
+        }
+    </style>
+</head>
+<body>
+    <h2>Resuelve el siguiente mini puzle</h2>
+    <ul id="ordenable">
+        <li id="c1"></li>
+        <li id="c2"></li>
+        <li id="c3"></li>
+        <li id="c4"></li>
+        <li id="c5"></li>
+        <li id="c6"></li>
+        <li id="c7"></li>
+        <li id="c8"></li>
+        <li id="c9"></li>
+        <li id="c10"></li>
+    </ul>
+    <script>
+        $(document).ready(function(){
+            let comb_correcta="c5c3c8c9c7c6c10c2c1c4"
+            $("#ordenable").sortable({
+                update: function(event,ui){
+                    let combinacion="";
+                    $("#ordenable li").each(function(){
+                        var listaid=$(this).attr("id");
+                        combinacion+=listaid;
+                    })
+                    console.log(combinacion);
+                    console.log(comb_correcta);
+                    if(combinacion==comb_correcta){
+                        alert("bien hecho");
+                        $("#ordenable").sortable("destroy");
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+</html>

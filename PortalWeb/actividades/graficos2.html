@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graficos 2</title>
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body>
+  <h1>Grafico con jquery y chart.js</h1>
+  <canvas id="myChart"></canvas>
+
+  <script>
+    $(document).ready(function(){
+      var data = {
+        labels: ['daw1', 'daw2', 'asir1', 'asir2'],
+        datasets: [{
+          data: [20, 14, 25, 17],
+          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0'],
+        }]
+      };
+
+      var options = {
+        responsive: true,
+        maintainAspectRatio: false,
+      };
+
+      var myChart = new Chart(
+        document.getElementById('myChart'),{
+          type: 'pie',
+          data: data,
+          options: options
+        }
+      );
+    })
+  </script>
+</body>
+
+</html>
