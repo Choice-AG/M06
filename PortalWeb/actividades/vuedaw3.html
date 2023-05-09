@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app1">
+    <p>{{ message }}</p>
+  </div>
+  <div id="app2">
+    <button v-on:click="increment">Counter {{counter}}</button>
+  </div>
+  <div id="app3">
+    <ul>
+      <li v-for="(fruit, index) in fruits" :key="index">{{ fruit }}</li>
+    </ul>
+  </div>
+</body>
+<script>
+  const app1 = new Vue({
+    el: '#app1',
+    data: {
+      message: 'app1 message',
+    }
+  });
+  const app2 = new Vue({
+    el: '#app2',
+    data: {
+      counter: 0,
+    },
+    methods: {
+      increment() {
+        this.counter++;
+      },
+    }
+  });
+  const app3 = new Vue({
+    el: '#app3',
+    data: {
+      fruits: ['apple', 'banana', 'orange', 'peach'],
+    }
+  })
+</script>
+</html>

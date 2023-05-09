@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+  <h1>Inicio VUE</h1>
+  <div id="app">
+    <h1>{{ titulo }}</h1>
+    <p> {{ mensaje }}</p>
+    <h2> {{ mensaje2 }}</h2>
+    <!-- Un botón con una simplificación de la directiva -->
+    <button @click="changeTitle">Change title</button>
+  </div>
+</body>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      titulo: 'This is the h1 title',
+      message: 'this is a message',
+      message2: 'this is message2',
+    },
+    methods: {
+      changeTitle() {
+        this.title = 'This is the new title'
+      }
+    }
+  })
+</script>
+</html>

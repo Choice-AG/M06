@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+  <h1>Vue que me calcule el NIF desde un input</h1>
+  <div id="app1">
+    <label for="dni">Introduce el DNI:</label>
+    <input id="dni" type="text" v-model="dni" placeholder="DNI">
+    <button v-on:click="calcularLetra">Calcular letra</button>
+    <p v-if="letraNif">DNI completo: {{ dni }}--{{ letraNif }}</p>
+  </div>
+</body>
+<script>
+  const app1 = new Vue({
+    el: '#app1',
+    data: {
+      dni: '',
+      letraNif: '',
+    },
+    methods: {
+      calcularLetra: function() {
+        const letras = 'TRWAGMYFPDXBNJZSQVHLCKEO';
+        const dni = this.dni;
+        if(/^\d{8}$/.test(dni)) {
+          const letra = letras.charAt(dni % 23);
+          this.letraNif = letra;
+        } else {
+          alert("El DNI no es correcto");
+        }
+      }
+    }
+  })
+
+  var data = {
+        labels: ['opcionA', 'opcionB', 'opcionC'],
+        datasets: [{
+          data: [20, 15, 30],
+          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+        }]
+      };
+
+      var options = {
+        responsive: true,
+        maintainAspectRatio: false,
+      };
+
+      var myChart = new Chart(
+        document.getElementById('myChart'),{
+          type: 'pie',
+          data: data,
+          options: options
+        }
+      );
+</script>
+</html>
+
