@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 1</title>
+</head>
+<body>
+  <h1>Crear una clase </h1>
+  <p>Llamada Libro que represente un libro. La clase debe tener las siguientes características:<br>
+    •	La clase Libro debe tener un constructor que acepte tres parámetros: titulo, autor y anioPublicacion. Estos parámetros representan el título del libro, el autor del libro y el año de publicación del libro, respectivamente.<br>
+    •	La clase Libro debe tener getters y setters.<br>
+    •	La clase Libro debe tener tres propiedades: titulo, autor y anioPublicacion, que corresponden a los valores pasados en el constructor.<br>
+    •	La clase Libro debe tener un método llamado obtenerEdicion que devuelve una cadena de texto con la información del libro en el siguiente formato: "Título, escrito por Autor, publicado en Año de Publicación".<br>
+  </p>
+  <script>
+    class Libro {
+      constructor(titulo, autor, anioPublicacion) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.anioPublicacion = anioPublicacion;
+      }
+      getTitulo() {
+        return this.titulo;
+      }
+      setTitulo(titulo) {
+        this.titulo = titulo;
+      }
+      getAutor() {
+        return this.autor;
+      }
+      setAutor(autor) {
+        this.autor = autor;
+      }
+      getAnioPublicacion() {
+        return this.anioPublicacion;
+      }
+      setAnioPublicacion(anioPublicacion) {
+        this.anioPublicacion = anioPublicacion;
+      }
+
+      obtenerEdicion() {
+        return `"${this.getTitulo()}", escrito por ${this.getAutor()}, publicado en ${this.getAnioPublicacion()}`;
+      }
+    }
+
+    //Instancia del libro
+    let libro1 = new Libro("El señor de los anillos", "J.R.R. Tolkien", 1954);
+    let libro2 = new Libro("El hobbit", "J.R.R. Tolkien", 1937);
+
+    console.log(libro1.obtenerEdicion());
+    console.log(libro2.obtenerEdicion());
+  </script>
+</body>
+</html>

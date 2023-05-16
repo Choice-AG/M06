@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Crea dos clases</h1>
+  <p>Banco y Cliente, que representen un banco y sus clientes, respectivamente. Las clases deben tener las siguientes características:<br><br>
+	a.	Clase Banco:<br>
+	•	La clase Banco debe tener un constructor que acepte un parámetro nombre, que represente el nombre del banco.<br>
+	•	La clase Banco debe tener una propiedad clientes, que sea un array vacío al momento de la creación del banco.<br>
+	•	La clase Banco debe tener un método agregarCliente que acepte un objeto cliente y lo agregue al array clientes.<br>
+	•	La clase Banco debe tener un método mostrarClientes que imprima por consola el nombre de todos los clientes registrados en el banco.<br><br>
+	b.	Clase Cliente:<br>
+	•	La clase Cliente debe tener un constructor que acepte dos parámetros: nombre y edad, que representen el nombre y la edad del cliente, respectivamente.<br>
+	•	La clase Cliente debe tener dos propiedades: nombre y edad, que correspondan a los valores pasados en el constructor.<br>
+</p>
+<script>
+  class Banco {
+    constructor(nombre) {
+      this.nombre = nombre;
+      this.clientes = [];
+    } 
+
+    agregarCliente(cliente) {
+      this.clientes.push(cliente);
+    }
+
+    mostrarClientes() {
+      console.log("Clientes:");
+      for (let cliente of this.clientes) {
+        console.log(`Nombre ${cliente.nombre}, edad ${cliente.edad}`);
+      }
+      /* this.clientes.forEach(cliente => {
+        console.log(`Nombre ${cliente.nombre}, edad ${cliente.edad}`);
+      }); */
+    }
+  }
+
+  class Cliente {
+    constructor(nombre, edad) {
+      this.nombre = nombre;
+      this.edad = edad;
+    }
+  }
+
+  let banco1 = new Banco("Banco de la plaza");
+  let cliente1 = new Cliente("Juan", 37);
+  let cliente2 = new Cliente("Ana", 28);
+  let cliente3 = new Cliente("Pedro", 18);
+  banco1.agregarCliente(cliente1);
+  banco1.agregarCliente(cliente2);
+  banco1.agregarCliente(cliente3);
+
+  console.log("Nombre del banco: " + banco1.nombre);
+  banco1.mostrarClientes();
+
+  let banco2 = new Banco("Banco de Ermua");
+
+</script>
+</body>
+</html>
