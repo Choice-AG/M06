@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Crea una clase</h1>
+  <p>
+  Llamada EquipoDeportivo que represente un equipo deportivo. La clase debe tener las siguientes características:<br><br>
+	•	La clase EquipoDeportivo debe tener un constructor que acepte tres parámetros: nombre, deporte y ciudad. Estos parámetros representan el nombre del equipo, el deporte al que pertenece y la ciudad donde está ubicado el equipo, respectivamente.<br><br>
+	•	La clase EquipoDeportivo debe tener tres propiedades: nombre, deporte y ciudad, que corresponden a los valores pasados en el constructor.<br><br>
+	•	La clase EquipoDeportivo debe tener un método llamado mostrarInformacion que imprima por consola la información del equipo, incluyendo el nombre, el deporte y la ciudad.<br><br>
+  </p>
+  <script>
+    class EquipoDeportivo {
+      constructor(nombre, deporte, ciudad) {
+        this.nombre = nombre;
+        this.deporte = deporte;
+        this.ciudad = ciudad;
+      }
+      //getter
+      getNombre() {
+        return this.nombre;
+      }
+      getDeporte() {
+        return this.deporte;
+      }
+      getCiudad() {
+        return this.ciudad;
+      }
+      //setter
+      setNombre(nombre) {
+        this.nombre = nombre;
+      }
+      setDeporte(deporte) {
+        this.deporte = deporte;
+      }
+      setCiudad(ciudad) {
+        this.ciudad = ciudad;
+      }
+
+      mostrarInformacion() {
+        console.log(`Nombre: ${this.getNombre()}, deporte: ${this.getDeporte()}, ciudad: ${this.getCiudad()}`);
+      }
+    }
+
+    const equipo1 = new EquipoDeportivo('FCBARCELONA', 'Fútbol', 'BARCELONA');
+    const equipo2 = new EquipoDeportivo('RCDESPANYOL', 'Fútbol', 'BARCELONA');
+
+    equipo1.mostrarInformacion();
+    equipo2.mostrarInformacion();
+  </script>
+</body>
+</html>

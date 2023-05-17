@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 5px;
+    text-align: left;
+  }
+  img {
+    width: 100px;
+  }
+</style>
+<body>
+  <h1>Recorre y muestra la información</h1>
+  <p>
+  del json peliculas.json y muéstrala de forma organizada.
+  </p>
+  <div id="mostrar"></div>
+  <script>
+    const stringPeliculas = '{ "peliculas": [ { "id": 1, "nombre": "El sexto sentido", "director": "M. Night Shyamalan", "clasificacion": "Drama", "url": "https://pics.filmaffinity.com/El_sexto_sentido-672364684-large.jpg" }, { "id": 2, "nombre": "Pulp Fiction", "director": "Tarantino", "clasificacion": "Acción", "url": "https://pics.filmaffinity.com/Pulp_Fiction-210382116-mmed.jpg" }, { "id": 3, "nombre": "Todo Sobre Mi Madre", "director": "Almodobar", "clasificacion": "Drama", "url": "https://pics.filmaffinity.com/Todo_sobre_mi_madre-719308624-mmed.jpg" }, { "id": 4, "nombre": "300", "director": "Zack Snyder", "clasificacion": "Acción", "url": "https://pics.filmaffinity.com/300-274692460-large.jpg" }, { "id": 5, "nombre": "El silencio de los corderos", "director": "Jonathan Demme", "clasificacion": "Drama", "url": "https://pics.filmaffinity.com/El_silencio_de_los_corderos-767447992-large.jpg" }, { "id": 6, "nombre": "Forrest Gump", "director": "Robert Zemeckis", "clasificacion": "Comedia", "url": "https://pics.filmaffinity.com/Forrest_Gump-212765827-large.jpg" }, { "id": 7, "nombre": "Las Hurdes", "director": "Luis Buñuel", "clasificacion": "Documental", "url": "https://pics.filmaffinity.com/Las_Hurdes_Tierra_sin_pan-618902623-mmed.jpg" } ], "clasificaciones": [ { "nombre": "Drama", "id": 1 }, { "nombre": "Comedia", "id": 2 }, { "nombre": "Documental", "id": 3 }, { "nombre": "Acción", "id": 4 } ] }';
+    const peliculas = JSON.parse(stringPeliculas);
+
+    let mostrar = document.querySelector('#mostrar');
+    let codigo = '<table border="1"><tr><th>ID</th><th>NOMBRE</th><th>DIRECTOR</th><th>CLASIFICACION</th><th>IMAGEN</th></tr>';
+      peliculas.peliculas.forEach(pelicula => {
+        codigo += `<tr><td>${pelicula.id}</td><td>${pelicula.nombre}</td><td>${pelicula.director}</td><td>${pelicula.clasificacion}</td><td><img src="${pelicula.url}" alt="${pelicula.nombre}"></td></tr>`;
+      });
+    
+    codigo += '</table>';
+    mostrar.innerHTML = codigo;
+
+    // for of: elementos iterables arrays strings
+    // for in: recorrer propiedades deun objeto
+  </script>
+</body>
+</html>

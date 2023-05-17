@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Crea una clase</h1>
+  <p>
+    lamada EquipoDeportivo que represente un equipo deportivo. La clase debe tener las siguientes características:<br>
+	•	La clase EquipoDeportivo debe tener un constructor que acepte tres parámetros: nombre, deporte y ciudad. Estos parámetros representan el nombre del equipo, el deporte al que pertenece y la ciudad donde está ubicado el equipo, respectivamente.<br>
+	•	La clase EquipoDeportivo debe tener tres propiedades: nombre, deporte y ciudad, que corresponden a los valores pasados en el constructor.<br>
+	•	La clase EquipoDeportivo debe tener un método llamado mostrarInformacion que imprima por consola la información del equipo, incluyendo el nombre del equipo, el deporte al que pertenece y la ciudad donde está ubicado.<br><br>
+Implementa la instancia a partir del siguiente son:<br>
+	•	const registrosJson = [<br>
+	•	  { "nombre": "FCBARCELONA", "deporte": "Fútbol", "ciudad": "BARCELONA" },<br>
+	•	  { "nombre": "RCDESPANYOL", "deporte": "Fútbol", "ciudad": "BARCELONA" },<br>
+	•	  { "nombre": "REAL MADRID CF", "deporte": "Petanca", "ciudad": "MADRID" },<br>
+	•	  { "nombre": "CLUB NATACIO BARCELONA", "deporte": "Rugby", "ciudad": "BARCELONA" },<br>
+	•	  { "nombre": "REUS ESPORTIU", "deporte": "Hockey ", "ciudad": "REUS" }<br>
+	•	];<br>
+  </p>
+
+  <script>
+    class EquipoDepotivo {
+      constructor(nombre, deporte, ciudad) {
+        this.nombre = nombre;
+        this.deporte = deporte;
+        this.ciudad = ciudad;
+      }
+
+      mostrarInformacion() {
+        console.log(`Nombre: ${this.nombre}, deporte: ${this.deporte}, ciudad: ${this.ciudad}`);
+      }
+    }
+
+    const registrosJson = [
+      { "nombre": "FCBARCELONA", "deporte": "Fútbol", "ciudad": "BARCELONA" },
+      { "nombre": "RCDESPANYOL", "deporte": "Fútbol", "ciudad": "BARCELONA" },
+      { "nombre": "REAL MADRID CF", "deporte": "Petanca", "ciudad": "MADRID" },
+      { "nombre": "CLUB NATACIO BARCELONA", "deporte": "Rugby", "ciudad": "BARCELONA" },
+      { "nombre": "REUS ESPORTIU", "deporte": "Hockey ", "ciudad": "REUS" }
+    ];
+
+    const equipos = [];
+    registrosJson.forEach(registro => {
+      const equipo = new EquipoDepotivo(registro.nombre, registro.deporte, registro.ciudad);
+      equipos.push(equipo);
+    });
+    equipos.forEach(equipo => {
+      equipo.mostrarInformacion();
+    });
+  </script>
+</body>
+</html>

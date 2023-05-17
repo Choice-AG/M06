@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Crea una clase</h1>
+  <p>
+    Llamada Playlist que represente una lista de reproducción de canciones. La clase debe tener las siguientes características:<br><br>
+	•	La clase Playlist debe tener un constructor que acepte un parámetro nombre, que represente el nombre de la playlist.<br><br>
+	•	La clase Playlist debe tener un array llamado canciones, que almacenará las canciones de la lista de reproducción.<br><br>
+	•	La clase Playlist debe tener un método llamado agregarCancion que acepte un parámetro cancion y que agregue la canción a la lista de reproducción.<br><br>
+	•	La clase Playlist debe tener un método llamado listarCanciones que imprima por consola el nombre de la playlist y las canciones que contiene. Cada canción debe mostrarse en una nueva línea y numerada en orden ascendente.<br><br>
+  </p>
+  <script>
+    class Playlist {
+      constructor(nombre) {
+        this.nombre = nombre;
+        this.canciones = [];
+      }
+      agregarCancion(cancion) {
+        this.canciones.push(cancion);
+      }
+
+      listarCanciones() {
+        console.log(`Playlist: ${this.nombre}`);
+        for (let i = 0; i < this.canciones.length; i++) {
+          console.log(`${i + 1}. ${this.canciones[i]}`);
+        }
+      }
+    }
+
+    let playlist1 = new Playlist("KPOP - TWICE");
+    playlist1.agregarCancion("Fancy");
+    playlist1.agregarCancion("Feel special");
+    playlist1.agregarCancion("More & More");
+    playlist1.agregarCancion("I can't stop me");
+    playlist1.agregarCancion("Dance the night Away");
+    playlist1.listarCanciones();
+  </script>
+</body>
+</html>
