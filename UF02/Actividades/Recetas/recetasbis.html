@@ -1,37 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recetas</title>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-      *{
-        font-family: 'Roboto', sans-serif;
-      }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
 
-      div#mostrar{
-        margin: 0px 10px;
-      }
-
-      li{
-        margin-bottom: 10px;
-      }
-      label{
-        margin-right: 10px;
-        font-size: 1.5rem;
-        font-weight: bold;
-      }
-    </style>
+  </style>
 </head>
+
 <body>
-    <div id="mostrar">
-        <h1>Recetas</h1>
-        <div id="recetas"></div>
-    </div>
-    <script>
-        const recetas = [
+  <select name="receta" id="sel">
+
+  </select>
+  <div id="mostrar">
+
+  </div>
+
+
+  <script>
+    let mostrar = document.querySelector("#mostrar");
+    const recetaJSON = [
       {
         "nombre": "Receta de Pastel de remolacha salado",
         "url": "https://www.recetasgratis.net/receta-de-pastel-de-remolacha-salado-70098.html",
@@ -6506,16 +6497,47 @@
         "last_updated": "2018-01-28",
         "idioma": "es"
       }
-    ];
+    ]
+    let codigo = `<h1>RECETAS</h1>`;
+    /*
+  for (const receta in recetaJSON){
+      console.log(recetaJSON[receta].nombre);
+      codigo+=`<li >${recetaJSON[receta].nombre}</li>`;
+  }
+  */
+    let select = document.querySelector("#sel");
+    let cod = "<div><option>ELIGE UNA RECETA</option></div>";
+    recetaJSON.forEach(function (receta) {
+      cod += `<option value="${receta.nombre}">${receta.nombre}</option>`;
+    })
+    select.innerHTML = cod;
 
-    let mostrar = document.querySelector("#mostrar");
-    let codigo = `<label for="recetas">Recetas:</label><select name="recetas"><option disabled selected value> -- selecciona una receta -- </option>`;
-    for (let i = 0; i < recetas.length; i++) {
-        codigo += `<option value="${recetas[i].nombre}">${recetas[i].nombre}</option>`;
-    }
+    select.addEventListener("change", function (e) {
+      codigo = "";
+      recetaJSON.forEach(function (receta) {
 
-    mostrar.innerHTML = codigo;
-
-    </script>
+        if (e.target.value == receta.nombre) {
+          codigo += `<div> <h1>${receta.nombre}</h1> <p>${receta.descripcion}</p> <a href='${receta.url}' 
+          target='_blank'>Enlace</a> <h2>Ingredientes:</h2> <ul>`
+          receta.ingredientes.forEach(function (ing) {
+            codigo += `<li>${ing}</li>`
+          })
+          codigo += `</ul></div>`;
+        }
+      })
+      mostrar.innerHTML = codigo;
+    })
+    /*
+      recetaJSON.forEach(function(receta){
+        codigo+=`<div> <h1>${receta.nombre}</h1> <p>${receta.descripcion}</p> <a href="${receta.url} target="_blank">Enlace</a> <h2>Ingredientes:</h2> <ul>`
+        receta.ingredientes.forEach(function(ing){
+          codigo+= `<li>${ing}</li>`
+        })
+        codigo+=`</ul></div>`;
+      })
+      mostrar.innerHTML = codigo;
+    */
+  </script>
 </body>
+
 </html>
